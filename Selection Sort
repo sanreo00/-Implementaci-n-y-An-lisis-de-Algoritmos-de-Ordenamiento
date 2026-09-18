@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int arreglo[] = {5, 3, 8, 2};
+    int n = 4;
+    int comparaciones = 0;
+    int intercambios = 0;
+    for (int i = 0; i < n - 1; i++) {
+        int menor = i;
+        for (int j = i + 1; j < n; j++) {
+            comparaciones++;
+            if (arreglo[j] < arreglo[menor]) {
+                menor = j;
+            }
+        }
+        if (menor != i) {
+            int temp = arreglo[i];
+            arreglo[i] = arreglo[menor];
+            arreglo[menor] = temp;
+            intercambios++;
+        }
+    }
+    cout << "Comparaciones: " << comparaciones << endl;
+    cout << "Intercambios: " << intercambios << endl;
+retrun 0;
+}
+
+    return 0;
+}
